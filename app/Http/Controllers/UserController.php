@@ -51,8 +51,21 @@ class UserController extends Controller
         }catch(Exception $e){
             throw $e;
         }
-        return redirect()->route('user.signup')
+        return redirect()->route('user.login')
                         ->with('success', "You've successfully verified your email. Please Login to continue.");
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|min:6',
+        ]);   
+        $credentials = $request->only('email', 'password');
+        if(Auth::attempt($credentials)) {
+            return view('user.dash');
+        }  
+        return redirect()->route('user.login')->withErrors('Login details are not valid');
     }
 
     public function index()

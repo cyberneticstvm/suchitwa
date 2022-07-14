@@ -113,19 +113,11 @@
                                     <small class="text-danger">{{ $errors->first('confirm_password') }}</small>
                                     @enderror
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            I accept the <a href="#" title="" class="text-primary">Terms and Conditions</a>
-                                        </label>
-                                    </div>
-                                </div>
                                 <div class="col-12 text-center mt-4">
                                     <button type="submit" class="btn btn-submit btn-block btn-primary lift text-uppercase">SIGN UP</button>
                                 </div>
                                 <div class="col-12 text-center mt-4">
-                                    <span class="text-muted">Already have an account? <a href="/user/login/">Sign in here</a></span>
+                                    <span class="text-muted">Already have an account? <a href="{{ route('user.login') }}">Sign in here</a></span>
                                 </div>
                             </form>
                             <!-- End Form -->

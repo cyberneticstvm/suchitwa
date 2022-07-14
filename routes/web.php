@@ -21,9 +21,14 @@ Route::get('/user/signup/', function () {
     return view('user.signup');
 })->name('user.signup');
 
+Route::get('/user/login/', function () {
+    return view('user.login');
+})->name('user.login');
+
 Route::post('/user/signup/', [UserController::class, 'signup'])->name('signup');
 Route::get('/user/verifyemail/{token}', [UserController::class, 'verifyemail'])->name('user.verifyemail');
+Route::post('/user/login/', [UserController::class, 'login'])->name('login');
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
-
+    Route::get('/user/dash/', [UserController::class, 'index'])->name('user.dash');
 });
