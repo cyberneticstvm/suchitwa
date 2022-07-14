@@ -37,7 +37,11 @@
                                 @csrf
                                 <div class="col-12 text-center mb-5">
                                     <h1>Create your account</h1>
-                                    @include('flash-message')
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('success') }}
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-2">
