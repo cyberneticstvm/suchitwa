@@ -46,7 +46,11 @@ class UserController extends Controller
     }
 
     public function verifyemail($token){
-        User::where('email_token', $token)->update(['email_verified_at' => Carbon::now()]);
+        try{
+            User::where('email_token', $token)->where('email_verified_at', NULL)->update(['email_verified_at' => Carbon::now()]);
+        }catch(Exception $e){
+            throw $e;
+        }
         return redirect()->route('user.signup')
                         ->with('success', "You've successfully verified your email. Please Login to continue.");
     }
