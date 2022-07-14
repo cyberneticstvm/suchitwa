@@ -22,7 +22,7 @@ Route::get('/user/signup/', function () {
 })->name('user.signup');
 
 Route::post('/user/signup/', [UserController::class, 'signup'])->name('signup');
-Route::get('/user/verifyEmail/{$token}', [UserController::class, 'verifyEmail'])->name('user.verifyEmail');
+Route::get('/user/verifyemail/{token}', [UserController::class, 'verifyemail'])->name('user.verifyemail');
 
 Route::group(['middleware' => ['auth']], function(){
 
