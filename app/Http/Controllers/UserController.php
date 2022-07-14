@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 use Hash;
 use DB;
 use Mail;
@@ -45,8 +46,7 @@ class UserController extends Controller
     }
 
     public function verifyemail($token){
-        echo 'reached here';
-        die;
+        User::where('email_token', $token)->update(['email_verified_at' => Carbon::now()]);
         return redirect()->route('user.signup')
                         ->with('success', "You've successfully verified your email. Please Login to continue.");
     }
