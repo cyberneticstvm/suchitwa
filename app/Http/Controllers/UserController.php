@@ -64,8 +64,8 @@ class UserController extends Controller
         ]);   
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)){
-            $clists = [];
-            return view('user.dash', compact('clists'));
+            return redirect()->route('user.dash')
+                        ->with('success','User Logged in successfully');
         }else{
             return redirect()->route('user.login')->with('error', 'Login details are not valid');
         } 
