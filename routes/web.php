@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/user/signup/', function () {
     return view('user.signup');
-});
+})->name('user.signup');
 
 Route::post('/user/signup/', [UserController::class, 'signup'])->name('signup');
 Route::post('/user/verifyEmail/{$token}', [UserController::class, 'verifyEmail'])->name('user.verifyEmail');
