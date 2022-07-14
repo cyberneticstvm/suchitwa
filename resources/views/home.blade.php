@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <title>:: ALUI :: Server</title>
+    <title>Suchitwa Mission</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
     <!-- project css file  -->
@@ -21,64 +21,24 @@
         <!-- Top Header -->
         <nav class="navbar navbar-expand-lg py-lg-3 lp-menu">
             <div class="container">
-                <a class="navbar-brand fw-bold text-primary fs-2" href="index.html" title="Logo">ALUI</a>
+                <a class="navbar-brand fw-bold text-primary fs-2" href="index.html" title="Logo">SUCHITWA MISSION</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false">
                     <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-6">
                         <li class="nav-item"><a class="nav-link me-2" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link me-2" href="#">Calculator</a></li>
-                        <li class="nav-item"><a class="nav-link me-2" href="#">Future</a></li>
-                        <li class="nav-item"><a class="nav-link me-2" href="#">Pricing</a></li>
+                        <li class="nav-item me-3 dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Login</a>
+                            <ul class="dropdown-menu border-0 shadow">
+                                <li><a class="dropdown-item" href="/admin/login/">Admin Login</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/user/login/">User Login</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <form class="d-flex">
-                        <div class="dropdown Language d-none d-sm-block">
-                            <a class="nav-link dropdown-toggle pulse mx-3" href="#" role="button" data-bs-toggle="dropdown">
-                                <i class="fa fa-language"></i>
-                            </a>
-                            <div class="dropdown-menu rounded-lg shadow border-0 dropdown-animation dropdown-menu-end p-0" data-bs-popper="none">
-                                <div class="card border-0">
-                                    <div class="card-body">
-                                        <ul class="list-unstyled menu-grid d-flex flex-wrap mb-0 rounded mx-auto">
-                                            <li><a class="m-link active" href="#">
-                                                <svg class="avatar mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
-                                                    <circle style="fill:#f0f0f0" cx="256" cy="256" r="256"/>
-                                                    <path style="fill:#d80027" d="M244.87 256H512c0-23.106-3.08-45.49-8.819-66.783H244.87V256zm0-133.565h229.556a257.35 257.35 0 0 0-59.07-66.783H244.87v66.783zM256 512c60.249 0 115.626-20.824 159.356-55.652H96.644C140.374 491.176 195.751 512 256 512zM37.574 389.565h436.852a254.474 254.474 0 0 0 28.755-66.783H8.819a254.474 254.474 0 0 0 28.755 66.783z"/>
-                                                    <path style="fill:#0052b4" d="M118.584 39.978h23.329l-21.7 15.765 8.289 25.509-21.699-15.765-21.699 15.765 7.16-22.037a257.407 257.407 0 0 0-49.652 55.337h7.475l-13.813 10.035a255.58 255.58 0 0 0-6.194 10.938l6.596 20.301-12.306-8.941a253.567 253.567 0 0 0-8.372 19.873l7.267 22.368h26.822l-21.7 15.765 8.289 25.509-21.699-15.765-12.998 9.444A258.468 258.468 0 0 0 0 256h256V0c-50.572 0-97.715 14.67-137.416 39.978zm9.918 190.422-21.699-15.765L85.104 230.4l8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765 8.289 25.509zm-8.289-100.083 8.289 25.509-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765zM220.328 230.4l-21.699-15.765L176.93 230.4l8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765 8.289 25.509zm-8.289-100.083 8.289 25.509-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765zm0-74.574 8.289 25.509-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765z"/>
-                                                </svg>
-                                                <span>USA</span></a>
-                                            </li>
-                                            <li><a class="m-link" href="#">
-                                                <svg class="avatar mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
-                                                    <circle style="fill:#f0f0f0" cx="256" cy="256" r="256"/>
-                                                    <path style="fill:#d80027" d="M512 256c0-110.071-69.472-203.906-166.957-240.077v480.155C442.528 459.906 512 366.071 512 256z"/>
-                                                    <path style="fill:#0052b4" d="M0 256c0 110.071 69.473 203.906 166.957 240.077V15.923C69.473 52.094 0 145.929 0 256z"/>
-                                                </svg>
-                                                <span>France</span></a>
-                                            </li>
-                                            <li><a class="m-link" href="#">
-                                                <svg class="avatar mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
-                                                    <circle style="fill:#f0f0f0" cx="256" cy="256" r="256"/>
-                                                    <path style="fill:#d80027" d="M512 256c0-101.494-59.065-189.19-144.696-230.598v461.195C452.935 445.19 512 357.494 512 256z"/>
-                                                    <path style="fill:#6da544" d="M0 256c0 101.494 59.065 189.19 144.696 230.598V25.402C59.065 66.81 0 154.506 0 256zm189.217 0c0 36.883 29.9 66.783 66.783 66.783s66.783-29.9 66.783-66.783v-22.261H189.217V256z"/>
-                                                    <path style="fill:#ff9811" d="M345.043 211.478H278.26c0-12.294-9.967-22.261-22.261-22.261s-22.261 9.967-22.261 22.261h-66.783c0 12.295 10.709 22.261 23.002 22.261h-.741c0 12.295 9.966 22.261 22.261 22.261 0 12.295 9.966 22.261 22.261 22.261h44.522c12.295 0 22.261-9.966 22.261-22.261 12.295 0 22.261-9.966 22.261-22.261h-.742c12.295 0 23.003-9.966 23.003-22.261z"/>
-                                                </svg>
-                                                <span>Mexico</span></a>
-                                            </li>
-                                            <li><a class="m-link" href="#">
-                                                <svg class="avatar mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
-                                                    <path style="fill:#ffda44" d="M0 256c0 31.314 5.633 61.31 15.923 89.043L256 367.304l240.077-22.261C506.367 317.31 512 287.314 512 256s-5.633-61.31-15.923-89.043L256 144.696 15.923 166.957C5.633 194.69 0 224.686 0 256z"/>
-                                                    <path style="fill:#d80027" d="M496.077 166.957C459.906 69.473 366.071 0 256 0S52.094 69.473 15.923 166.957h480.154zM15.923 345.043C52.094 442.527 145.929 512 256 512s203.906-69.473 240.077-166.957H15.923z"/>
-                                                </svg>
-                                                <span>Spain</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-dark rounded text-uppercase" type="submit">Signup</button>
+                        <a href="/user/signup/" class="btn btn-dark rounded text-uppercase">Signup</a>
                     </form>
                 </div>
             </div>
@@ -2781,232 +2741,6 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- calculator -->
-        <div class="section calculator">
-            <div class="container">
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <h2 class="h1 fw-bold color-600">Calculator</h2> 
-                        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-                <div class="row border g-3 p-4 shadow rounded">
-                    <div class="col-lg-12">
-                        <div class="progress" style="height: 2px;">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body p-xl-5 p-3">
-                                <h2 class="text-center mb-3">Country</h2>
-                                <p class="lead text-center">Lorem Ipsum is simply dummy text of the printing.</p>
-                                <form class="mt-5">
-                                    <div class="mb-3">
-                                        <label  class="form-label">Select Country</label>
-                                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                            <option selected>India</option>
-                                            <option value="1">India</option>
-                                            <option value="2">Russia</option>
-                                            <option value="3">Saint Lucia</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label  class="form-label">Node Access</label>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                            <label class="form-check-label" for="flexSwitchCheckChecked">Deactive</label>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn px-4 py-3 lift btn-outline-primary text-uppercase w-100 fw-bold">Confirmed</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body p-xl-5 p-3">
-                                <h2 class="text-center mb-3">Connection</h2>
-                                <p class="lead text-center">Lorem Ipsum is simply dummy text of the printing.</p>
-                                <form class="mt-5">
-                                    <div class="mb-3">
-                                        <label  class="form-label">Select type</label>
-                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
-                                            <label class="btn btn-outline-primary" for="btnradio1">Mobile</label>
-                                          
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                                            <label class="btn btn-outline-primary" for="btnradio2">Wi-Fi</label>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label  class="form-label">Theret Number</label>
-                                        <input type="number" class="form-control">
-                                    </div>
-                                    <button type="submit" class="btn px-4 py-3 lift btn-outline-primary text-uppercase w-100 fw-bold">Confirmed</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body p-xl-5 p-3">
-                                <h2 class="text-center mb-3">Duration</h2>
-                                <p class="lead text-center">Lorem Ipsum is simply dummy text of the printing.</p>
-                                <form class="mt-5">
-                                    <div class="mb-3">
-                                        <label  class="form-label">Select Duration</label>
-                                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio11" checked>
-                                            <label class="btn btn-outline-primary" for="btnradio11">Days</label>
-                                          
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio22">
-                                            <label class="btn btn-outline-primary" for="btnradio22">Weeks</label>
-                                          
-                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio33">
-                                            <label class="btn btn-outline-primary" for="btnradio33">Months</label>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label  class="form-label">Number of Duration</label>
-                                        <input type="number" class="form-control">
-                                    </div>
-                                    <button type="submit" class="btn px-4 py-3 lift btn-primary text-uppercase w-100 fw-bold">Calculate</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      
-        <!-- features -->
-        <div class="section features bg-primary-gradient">
-            <div class="container">
-                <div class="row mb-3">
-                    <div class="col-12 text-center">
-                        <h2 class="h1 fw-bold text-light">Key Product Features</h2> 
-                        <p class="lead text-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-                <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 g-1 mb-4 row-deck">
-                    <div class="col">
-                        <div class="card p-lg-5 p-4 text-center">
-                            <div class="icon"><i class="fa fa-database" aria-hidden="true"></i></div>
-                            <h4><a href="#" class="text-primary">Reliable Data Center</a></h4>
-                            <p class="mb-0">It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card p-lg-5 p-4 text-center">
-                            <div class="icon"><i class="fa fa-life-ring" aria-hidden="true"></i></div>
-                            <h4><a href="#" class="text-primary">Flexible & Easy</a></h4>
-                            <p class="mb-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card p-lg-5 p-4 text-center">
-                            <div class="icon"><i class="fa fa-check-square-o" aria-hidden="true"></i></div>
-                            <h4><a href="#" class="text-primary">Tested Reliability</a></h4>
-                            <p class="mb-0">It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card p-lg-5 p-4 text-center">
-                            <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                            <h4><a href="#" class="text-primary">Global Network</a></h4>
-                            <p class="mb-0">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card p-lg-5 p-4 text-center">
-                            <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                            <h4><a href="#" class="text-primary">Multiple Locations</a></h4>
-                            <p class="mb-0">It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card p-lg-5 p-4 text-center">
-                            <div class="icon"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <h4><a href="#" class="text-primary">All Time Support</a></h4>
-                            <p class="mb-0">It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pricing Table -->
-        <div class="section pricing-table">
-            <div class="container">
-                <div class="row mb-5 justify-content-center">
-                    <div class="col-8">
-                        <div class="section-title text-center">
-                            <span>PRICING TABLE</span>
-                            <h2 class="h1 mt-3">Our Pricing Plan</h2>
-                            <p class="lead">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-4 justify-content-center align-items-center">
-                    <div class="col-lg-4 col-sm-12">
-                        <div class="card">
-                            <div class="card-body py-4 text-center">
-                                <h6 class="text-uppercase">Basic</h6>
-                                <div><span class="display-5 text-primary">$99</span> <span class="text-muted">/Month</span></div>
-                            </div>
-                            <div class="card-footer border-top-0 px-5">
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Bandwidth:</span> <span>1GB</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Onlinespace:</span> <span>500MB</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Support:</span> <span>No</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Domain:</span> <span>1</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Hidden Fees:</span> <span>No</span></p>
-                            </div>
-                            <div class="card-body text-center">
-                                <a href="#" class="btn btn-white border lift">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <div class="card py-0 py-md-4 shadow">
-                            <div class="card-body py-4 text-center">
-                                <h6 class="text-uppercase">Business</h6>
-                                <div><span class="display-5 text-primary">$249</span> <span class="text-muted">/Month</span></div>
-                            </div>
-                            <div class="card-footer border-top-0 px-5">
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Bandwidth:</span> <span>2GB</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Onlinespace:</span> <span>5GB</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Support:</span> <span>Yes</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Domain:</span> <span>1</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Hidden Fees:</span> <span>No</span></p>
-                            </div>
-                            <div class="card-body text-center">
-                                <a href="#" class="btn btn-primary border lift">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-12">
-                        <div class="card">
-                            <div class="card-body py-4 text-center">
-                                <h6 class="text-uppercase">Professional</h6>
-                                <div><span class="display-5 text-primary">$399</span> <span class="text-muted">/Month</span></div>
-                            </div>
-                            <div class="card-footer border-top-0 px-5">
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Bandwidth:</span> <span>3GB</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Onlinespace:</span> <span>1TB</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Support:</span> <span>Yes</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Domain:</span> <span>Unlimited</span></p>
-                                <p class="d-flex justify-content-between py-1"><span><i class="fa fa-check-circle"></i> Hidden Fees:</span> <span>No</span></p>
-                            </div>
-                            <div class="card-body text-center">
-                                <a href="#" class="btn btn-white border lift">Get Started</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

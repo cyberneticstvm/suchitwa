@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+});
+Route::get('/user/signup/', function () {
+    return view('user.signup');
+});
+
+Route::post('/user/signup/', [UserController::class, 'signup'])->name('signup');
+Route::post('/user/verifyEmail/{$token}', [UserController::class, 'verifyEmail'])->name('user.verifyEmail');
+
+Route::group(['middleware' => ['auth']], function(){
+
 });
