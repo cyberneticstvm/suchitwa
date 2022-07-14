@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Responsive Bootstrap 5 admin template and web Application ui kit.">
     <meta name="keyword" content="ALUI, Bootstrap 5, ReactJs, Angular, Laravel, VueJs, ASP .Net, Admin Dashboard, Admin Theme">
-    <title>User Signup</title>
+    <title>User Login</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
     <!-- project css file  -->
@@ -42,11 +42,9 @@
                                             {{ session()->get('success') }}
                                         </div>
                                     @endif
-                                    @if ($errors->any())
+                                    @if(session()->has('error'))
                                         <div class="alert alert-danger">
-                                        @foreach ($errors->all() as $error)
-                                            {{ $error }}
-                                        @endforeach
+                                            {{ session()->get('error') }}
                                         </div>
                                     @endif
                                 </div>

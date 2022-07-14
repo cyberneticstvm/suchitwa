@@ -30,5 +30,8 @@ Route::get('/user/verifyemail/{token}', [UserController::class, 'verifyemail'])-
 Route::post('/user/login/', [UserController::class, 'login'])->name('login');
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
-    Route::get('/user/dash/', [UserController::class, 'index'])->name('user.dash');
+    Route::get('/user/dash/', function () {
+        return view('user.dash');
+    })->name('user.dash');
+    Route::get('/user/logout/', [UserController::class, 'logout'])->name('logout');
 });

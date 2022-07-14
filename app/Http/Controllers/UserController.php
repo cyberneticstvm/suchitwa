@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Carbon\Carbon;
+use Session;
 use Hash;
 use DB;
 use Mail;
@@ -62,10 +63,18 @@ class UserController extends Controller
             'password' => 'required|min:6',
         ]);   
         $credentials = $request->only('email', 'password');
-        if(Auth::attempt($credentials)) {
-            return view('user.dash');
-        }  
-        return redirect()->route('user.login')->withErrors('Login details are not valid');
+        if(Auth::attempt($credentials)){
+            $clists = [];
+            return view('user.dash', compact('clists'));
+        }else{
+            return redirect()->route('user.login')->with('error', 'Login details are not valid');
+        } 
+    }
+
+    public function logout(){
+        Session::flush();
+        Auth::logout();  
+        return Redirect('/user/login/');
     }
 
     public function index()
