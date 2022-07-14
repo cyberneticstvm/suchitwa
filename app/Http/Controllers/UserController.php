@@ -41,10 +41,12 @@ class UserController extends Controller
         });
 
         return redirect()->route('user.signup')
-                        ->with('success','Validation email has been sent to registered email id. Please verify your email id before proceeding further.');
+                        ->with('success','Success! Validation email has been sent to registered email id. Please verify your email id before proceeding further.');
     }
 
     public function verifyEmail($token){
+        echo 'reached here';
+        die;
         return redirect()->route('user.signup')
                         ->with('success', "You've successfully verified your email. Please Login to continue.");
     }
