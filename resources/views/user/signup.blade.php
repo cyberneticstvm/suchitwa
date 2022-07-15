@@ -76,7 +76,7 @@
                                         <select class="form-control" name="company_type">
                                             <option value="">Select</option>
                                             <option value="JV" {{ (old('company_type') == 'JV') ? 'selected' : '' }}>Joint Venture</option>
-                                            <option value="SC" {{ (old('company_type') == 'SC') ? 'selected' : '' }}>Single Comapny</option>
+                                            <option value="SC" {{ (old('company_type') == 'SF') ? 'selected' : '' }}>Firm</option>
                                         </select>
                                     </div>
                                     @error('company_type')

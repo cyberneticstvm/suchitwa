@@ -64,8 +64,12 @@ class UserController extends Controller
         ]);   
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)){
-            return redirect()->route('user.dash')
+            if(Auth::User()->email_verified_at == NULL){
+                return redirect()->route('user.login')->with('error', 'User verification not yet to be completed.');
+            }else{
+                return redirect()->route('user.dash')
                         ->with('success','User Logged in successfully');
+            }
         }else{
             return redirect()->route('user.login')->with('error', 'Login details are not valid');
         } 

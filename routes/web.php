@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,6 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
         return view('user.dash');
     })->name('user.dash');
     Route::get('/user/logout/', [UserController::class, 'logout'])->name('logout');
+    Route::get('/user/company/create/', [CompanyController::class, 'create'])->name('user.company.create');
+    Route::post('/user/company/save/', [CompanyController::class, 'store'])->name('company.save');
 });
