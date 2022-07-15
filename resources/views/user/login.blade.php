@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Responsive Bootstrap 5 admin template and web Application ui kit.">
-    <meta name="keyword" content="ALUI, Bootstrap 5, ReactJs, Angular, Laravel, VueJs, ASP .Net, Admin Dashboard, Admin Theme">
+    <meta name="description" content="Suchitwa Mission">
+    <meta name="keyword" content="Suchitwa Mission">
     <title>User Login</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
 
