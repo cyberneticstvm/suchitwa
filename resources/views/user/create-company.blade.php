@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col">
-                        <small class="text-muted">Welcome {{ Auth::User()->name }}.</small>
+                        <small class="text-muted">Welcome Guest.</small>
                         <h1 class="h4 mt-1">Submit New Firm</h1>
                     </div>
                 </div> <!-- Row end  -->

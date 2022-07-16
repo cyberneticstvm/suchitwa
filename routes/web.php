@@ -29,12 +29,13 @@ Route::get('/user/login/', function () {
 Route::post('/user/signup/', [UserController::class, 'signup'])->name('signup');
 Route::get('/user/verifyemail/{token}', [UserController::class, 'verifyemail'])->name('user.verifyemail');
 Route::post('/user/login/', [UserController::class, 'login'])->name('login');
+Route::get('/user/company/create/', [CompanyController::class, 'create'])->name('user.company.create');
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::get('/user/dash/', function () {
         return view('user.dash');
     })->name('user.dash');
     Route::get('/user/logout/', [UserController::class, 'logout'])->name('logout');
-    Route::get('/user/company/create/', [CompanyController::class, 'create'])->name('user.company.create');
+    #Route::get('/user/company/create/', [CompanyController::class, 'create'])->name('user.company.create');
     Route::post('/user/company/save/', [CompanyController::class, 'store'])->name('company.save');
 });
