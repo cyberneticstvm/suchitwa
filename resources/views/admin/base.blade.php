@@ -33,7 +33,7 @@
     <div class="navigation navbar navbar-light justify-content-center px-3 px-lg-2 py-2 py-md-3 border-end">
 
         <!-- Brand -->
-        <a href="/user/dash/" class="mb-0 mb-lg-3 brand-icon">
+        <a href="/admin/dash/" class="mb-0 mb-lg-3 brand-icon">
             <img src="{{ public_path().'/back-end/images/logo-icon.png' }}" width="50%" class="img-fluid"/>
         </a>
 
@@ -46,7 +46,7 @@
 
             <!-- Menu collapse -->
             <li class="nav-item"><a class="nav-link p-2 p-lg-3" href="#" title="Settings" data-bs-toggle="modal" data-bs-target="#SettingsModal"><i class="fa fa-gear"></i></a></li>
-            <li class="nav-item d-none d-sm-block"><a class="nav-link p-2 p-lg-3" href="{{ route('user.logout') }}" title="Logout"><i class="fa fa-power-off"></i></a></li>
+            <li class="nav-item d-none d-sm-block"><a class="nav-link p-2 p-lg-3" href="{{ route('admin.logout') }}" title="Logout"><i class="fa fa-power-off"></i></a></li>
 
         </ul>
 
@@ -64,7 +64,8 @@
 
             <!-- Menu: main ul -->
             <ul class="menu-list flex-grow-1">
-                <li><a class="m-link active" href="/user/dash/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li><a class="m-link active" href="/admin/dash/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li><a class="m-link" href="/admin/weightage/1/"><i class="fa fa-gear"></i> <span>Weightage</span></a></li>
             </ul>
 
             <!-- Menu: menu collepce btn -->

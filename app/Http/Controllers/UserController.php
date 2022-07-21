@@ -74,11 +74,36 @@ class UserController extends Controller
             return redirect()->route('user.login')->with('error', 'Login details are not valid');
         } 
     }
+    public function adminlogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|min:6',
+        ]);   
 
-    public function logout(){
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            if(Auth::User()->email_verified_at == NULL){
+                return redirect()->route('admin.login')->with('error', 'User verification not yet to be completed.');
+            }else if(Auth::User()->user_type == 'user'){
+                return redirect()->route('admin.login')->with('error', 'Login details are not valid');
+            }else{
+                return redirect()->route('admin.dash')
+                        ->with('success','User Logged in successfully');
+            }
+        }else{
+            return redirect()->route('admin.login')->with('error', 'Login details are not valid');
+        } 
+    }
+
+    public function userlogout(){
         Session::flush();
         Auth::logout();  
         return Redirect('/user/login/');
+    }
+    public function adminlogout(){
+        Session::flush();
+        Auth::logout();  
+        return Redirect('/admin/login/');
     }
 
     public function index()
