@@ -115,9 +115,9 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <label class="form-label">Number of Permanent Employees <span class="req">*</span>&nbsp;&nbsp;<a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Number of Permanent Employees"><i class="fa fa-info text-info"></i></a></label>
-                                                            <input type="number" name="years_of_experience" class="form-control" placeholder="0" />
-                                                            @error('years_of_experience')
-                                                            <small class="text-danger">{{ $errors->first('years_of_experience') }}</small>
+                                                            <input type="number" name="number_of_employees" class="form-control" placeholder="0" />
+                                                            @error('number_of_employees')
+                                                            <small class="text-danger">{{ $errors->first('number_of_employees') }}</small>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -128,39 +128,39 @@
                                                             <table class="table table-sm">
                                                                 <thead><tr><th>Year</th><th>Amount (Rs.Lakhs)</th></tr></thead>
                                                                 <tbody>
-                                                                    <tr><td><input type="number" name="" class="form-control" /></td><td><input type="number" name="" class="form-control" /></td></tr>
-                                                                    <tr><td><input type="number" name="" class="form-control" /></td><td><input type="number" name="" class="form-control" /></td></tr>
-                                                                    <tr><td><input type="number" name="" class="form-control" /></td><td><input type="number" name="" class="form-control" /></td></tr>
+                                                                    <tr><td><input type="number" name="year1" class="form-control" /></td><td><input type="number" name="fee1" class="form-control" /></td></tr>
+                                                                    <tr><td><input type="number" name="year2" class="form-control" /></td><td><input type="number" name="fee2" class="form-control" /></td></tr>
+                                                                    <tr><td><input type="number" name="year3" class="form-control" /></td><td><input type="number" name="fee3" class="form-control" /></td></tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                         <div class="col-sm-4"></div>
                                                         <div class="col-sm-12">
                                                             <label class="form-label">Whether the firm has been blacklisted by any Central Govt. / State Govt./PSU/ Govt. Bodies / Autonomous? If yes, details thereof.</label>
-                                                            <textarea name="blacklisted" class="form-control" placeholder="Details"></textarea>
-                                                            @error('blacklisted')
-                                                            <small class="text-danger">{{ $errors->first('blacklisted') }}</small>
+                                                            <textarea name="blacklisted_details" class="form-control" placeholder="Details"></textarea>
+                                                            @error('blacklisted_details')
+                                                            <small class="text-danger">{{ $errors->first('blacklisted_details') }}</small>
                                                             @enderror
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <label class="form-label">Whether any litigations pending before any court of law or tribunal If yes details thereof</label>
-                                                            <textarea name="blacklisted" class="form-control" placeholder="Details"></textarea>
-                                                            @error('blacklisted')
-                                                            <small class="text-danger">{{ $errors->first('blacklisted') }}</small>
+                                                            <textarea name="litigations_details" class="form-control" placeholder="Details"></textarea>
+                                                            @error('litigations_details')
+                                                            <small class="text-danger">{{ $errors->first('litigations_details') }}</small>
                                                             @enderror
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <label class="form-label">Whether included in the list of agencies not eligible for empanelment this year based on the performance evaluation by Suchitwa Mission among the agencies empaneled last year (2020-2021)</label>
-                                                            <textarea name="blacklisted" class="form-control" placeholder="Details"></textarea>
-                                                            @error('blacklisted')
-                                                            <small class="text-danger">{{ $errors->first('blacklisted') }}</small>
+                                                            <textarea name="not_eligible_details" class="form-control" placeholder="Details"></textarea>
+                                                            @error('not_eligible_details')
+                                                            <small class="text-danger">{{ $errors->first('not_eligible_details') }}</small>
                                                             @enderror
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <label class="form-label">Any other important information about the organization.</label>
-                                                            <textarea name="blacklisted" class="form-control" placeholder="Details"></textarea>
-                                                            @error('blacklisted')
-                                                            <small class="text-danger">{{ $errors->first('blacklisted') }}</small>
+                                                            <textarea name="other_details" class="form-control" placeholder="Details"></textarea>
+                                                            @error('other_details')
+                                                            <small class="text-danger">{{ $errors->first('other_details') }}</small>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -173,18 +173,14 @@
                                                                 <thead><tr><th>Name of Project</th><th>Client Name</th><th>Project Cost (Rs.)</th><th>Project Period (Yrs)</th><th>Project Start Date</th><th>Project Status</th><th></th></tr></thead>
                                                                 <tbody class="techQual">
                                                                     <tr>
-                                                                        <td><input type="text" name="" class="form-control" placeholder='Name of Project' /></td>
-                                                                        <td><input type="text" name="" class="form-control" placeholder='Client Name' /></td>
-                                                                        <td><input type="number" name="" class="form-control" placeholder='0.00' /></td>
-                                                                        <td><input type="number" name="" class="form-control" placeholder='0' /></td>
-                                                                        <td><input type="text" name="" class="form-control" placeholder="dd/mm/yyyy" /></td>
-                                                                        <td><select name="" class="form-control">
-                                                                            <option value="">Select</option>
-                                                                            <option value="1">DPR Stage</option>
-                                                                            <option value="2">Tendering Stage</option>
-                                                                            <option value="3">Execution Ongoing</option>
-                                                                            <option value="4">Execution Completed</option>
-                                                                        </select></td>
+                                                                        <td><input type="text" name="project_name[]" class="form-control" placeholder='Name of Project' /></td>
+                                                                        <td><input type="text" name="client_name[]" class="form-control" placeholder='Client Name' /></td>
+                                                                        <td><input type="number" name="project_cost[]" class="form-control" placeholder='0.00' /></td>
+                                                                        <td><input type="number" name="project_period[]" class="form-control" placeholder='0' /></td>
+                                                                        <td><input type="date" name="project_start_date[]" class="form-control" /></td>
+                                                                        <td>
+                                                                        {!! Form::select('project_status', array('' => 'Select') + $pstypes, '', array('class' => 'form-control select2', '')) !!}
+                                                                        </td>
                                                                         <td></td>
                                                                     </tr>
                                                                 </tbody>
@@ -196,45 +192,45 @@
                                                     <div class="row g-4">
                                                         <div class="col-sm-12">
                                                             <h6 class="text-primary">Scanned Cover letter</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_1" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <h6 class="text-primary">Partnership Deed / Sales Tax Registration / Memorandum of Articles of Association</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_2" class="form-control"/>
                                                         </div>
                                                         <h5>Financial Criteria</h5>
                                                         <div class="col-sm-6">
                                                             <h6 class="text-primary">Copy of Certificate of incorporation</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_3" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <h6 class="text-primary">Copy of the audited balance sheet for the last three years</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_4" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-8">
                                                             <h6 class="text-primary">Certification by Chartered Accountant regarding turnover from Design/Execution of LWM Projects</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_5" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <h6 class="text-primary">Net worth certification by a Chartered accountant</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_6" class="form-control"/>
                                                         </div>
                                                         <h5>Technical Criteria</h5>
                                                         <div class="col-sm-6">
                                                             <h6 class="text-primary">Copies of at least three work orders</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_7" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <h6 class="text-primary">Letter of satisfaction from at least two clients</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_8" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <h6 class="text-primary">In support of the information, Photo copies of project completion / commissioning certificates, and any other relevant documents. The details should cover Consultant experience in the development of the facility</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_9" class="form-control"/>
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <h6 class="text-primary">Key Full time staff Qualifications and Experience &nbsp;&nbsp;(<a href="{{ public_path().'/storage/docs/cv-format.pdf' }}" target="_blank">Download Format</a>)</h6>
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" name="attachment_10" class="form-control"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -242,7 +238,7 @@
                                             <div class="step-footer d-flex">
                                                 <button data-step-action="prev" class="btn btn-primary">Prev</button>
                                                 <button data-step-action="next" class="btn btn-primary">Next</button>
-                                                <button data-step-action="finish" class="btn btn-primary">Submit</button>
+                                                <button type="submit" data-step-action="finish" class="btn btn-primary btn-submit">Submit</button>
                                             </div>
                                         </div>
                                     </div>

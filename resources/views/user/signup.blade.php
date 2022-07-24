@@ -73,7 +73,7 @@
                                 <div class="col-6">
                                     <div class="mb-2">
                                         <label class="form-label">Company Type<span class="req">*</span></label>
-                                        <select class="form-control" name="company_type">
+                                        <select class="form-control" name="company_type" onChange="if($(this).val() == 'SC'){$('#company_count').val(1);$('#company_count').prop('disabled', true);}else{$('#company_count').prop('disabled', false);}">
                                             <option value="">Select</option>
                                             <option value="JV" {{ (old('company_type') == 'JV') ? 'selected' : '' }}>Joint Venture</option>
                                             <option value="SC" {{ (old('company_type') == 'SF') ? 'selected' : '' }}>Firm</option>
@@ -86,7 +86,7 @@
                                 <div class="col-6">
                                     <div class="mb-2">
                                         <label class="form-label">Number of Companies</label>
-                                        <select class="form-control" name="company_count">
+                                        <select class="form-control" name="company_count" id="company_count">
                                             <option value="1">Select</option>
                                             <option value="1" {{ (old('company_count') == 1) ? 'selected' : '' }}>1</option>
                                             <option value="2" {{ (old('company_count') == 2) ? 'selected' : '' }}>2</option>

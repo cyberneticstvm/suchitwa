@@ -26,7 +26,8 @@ class CompanyController extends Controller
     public function create()
     {
         $ctypes = DB::table('company_types')->pluck('name', 'id')->all();
-        return view('user.create-company', compact('ctypes'));
+        $pstypes = DB::table('project_status')->pluck('name', 'id')->all();
+        return view('user.create-company', compact('ctypes', 'pstypes'));
     }
 
     /**
@@ -37,7 +38,8 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "reached here";
+        die;
     }
 
     /**

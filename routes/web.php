@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelperController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\WeightageController;
@@ -38,12 +39,14 @@ Route::post('/admin/login/', [UserController::class, 'adminlogin'])->name('admin
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
 
+    // helper //
+    Route::get('/helper/projectstatus/', [HelperController::class, 'getProjectStatus']);
+    // end helper //
+
     // user //
     Route::get('/user/dash/', function () {
         return view('user.dash');
     })->name('user.dash');       
-    Route::get('/user/company/create/', [CompanyController::class, 'create'])->name('user.company.create');
-    Route::post('/user/company/save/', [CompanyController::class, 'store'])->name('company.save');
     Route::get('/user/logout/', [UserController::class, 'userlogout'])->name('user.logout');
     // end user //
 
@@ -55,4 +58,9 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::put('/admin/weightage/{id}/', [WeightageController::class, 'update'])->name('admin.weightage.update');
     Route::get('/admin/logout/', [UserController::class, 'adminlogout'])->name('admin.logout');
     // end admin //
+
+    // company //
+    Route::get('/user/company/create/', [CompanyController::class, 'create'])->name('user.company.create');
+    Route::post('/user/company/save/', [CompanyController::class, 'store'])->name('company.save');
+    // end company //
 });
